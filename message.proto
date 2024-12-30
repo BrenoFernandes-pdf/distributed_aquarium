@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package messages;
+
+message AppMessage {
+  string command = 1;
+  string args = 2;
+}
+
+message Object {
+  string address = 1;
+  string type = 2;
+  string status = 3;
+  int32 temp = 4;
+}
+
+message GatewayMessage {
+  enum MessageType {
+      UPDATE = 0;
+      GET = 1;
+      LIST = 2;
+  }
+
+  MessageType response_type = 1;
+  repeated Object device = 2;
+}
