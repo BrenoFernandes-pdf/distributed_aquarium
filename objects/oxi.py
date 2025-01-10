@@ -52,6 +52,6 @@ class Ox(Client):
     def periodic_update(self, client_socket):
         while True:
             time.sleep(5)
-            msg = f"oxiinfo {self.oxi} {self.state}"
+            msg = f"info {self.oxi} {self.state}"
             self.write(client_socket, msg)
 

@@ -8,7 +8,7 @@ class Temp(Client):
     def __init__(self, state, temp):
         self.state = True
         self.temp = 30
-        self.type = 'sensor_temperatura'
+        self.type = 'sensor_temp'
 
     def connect_tcp(self, addr):
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -52,6 +52,6 @@ class Temp(Client):
     def periodic_update(self, client_socket):
         while True:
             time.sleep(5)
-            msg = f"tempinfo {self.temp} {self.state}"
+            msg = f"info {self.temp} {self.state}"
             self.write(client_socket, msg)
 

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package messages;
+package message;
 
 message AppMessage {
   string command = 1;
@@ -23,4 +23,8 @@ message GatewayMessage {
 
   MessageType response_type = 1;
   repeated Object device = 2;
+}
+
+message DeviceMessage {
+  string data = 1;
 }
